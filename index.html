@@ -1,99 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Practice Website</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
-    <title>My portfolio</title>
-  </head>
-<body style="background-color: 	#DCDCDC">
-    <h1>Hello this is my web portfolio</h1>
-    <div>
-        <Picture>IMAGE HERE</Picture>
-    </div>
+  <script>
 
-    <div class="header">
-        <li>
-            <a href="#">ABOUT MY SELF</a>
-        </li>
-        <li>
-            <a href="#">ABOUT</a>
-        </li>
-        <li>
-            <a href="#">HOBBIES</a>
-        </li>
-        <li>
-            <a href="#">FAVORITE PAST TIME</a>
-        </li>
-        <li>
-            <a href="#">CONTACT ME</a>
-        </li>
-    </div>
-    <div class="forNav">
-        <div>
-            <h1>ABOUT MY SELF</h1>
-            <p>
-                Hey I’m Gerzon C. Luzon IT Instructor @ STI College. My favorite food is Bahug-bahug
-            </p>
-        </div>
-        <div>
-            <h1>ABOUT</h1>
-            <p>
-                Hey I’m Gerzon C. Luzon IT Instructor @ STI College. My favorite food is Bahug-bahug
-            </p>
-        </div>
-        <div>
-            <h1>HOBBIES</h1>
-            <p>
-                SLEEPING, DRINKING KULAFO, YAKULT
-            </p>
-        </div>
-        <div>
-            <h1>FAVORITE PAST TIME</h1>
-            <p>
-                SLEEPING, DRINKING KULAFO, KARAOKE
-            </p>
-        </div>
-        <div>
-            <h1>CONTACT ME</h1>
-            <li>
-                luzongerzon@gmail.com
-            </li>
-            <li>
-                fb: gerzonluzon
-            </li>
-        </div>
-    </div>
-    <div class="forBodyContent">
+    let count = 0;
+button.addEventListener("click", () => {
+  count++;
+  message.textContent = `Clicked ${count} times`;
+});
 
-    </div>
+  </script>
 
-    <div class="footer">
-        <li>
-            <a href="#">ABOUT MY SELF</a>
-        </li>
-        <li>
-            <a href="#">ABOUT</a>
-        </li>
-        <li>
-            <a href="#">HOBBIES</a>
-        </li>
-        <li>
-            <a href="#">FAVORITE PAST TIME</a>
-        </li>
-        <li>
-            <a href="#">CONTACT ME</a>
-        </li>
-    </div>
+  <style>
+    /* ===== RESET ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    /* ===== LAYOUT ===== */
+    header {
+      background: #111;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      margin: auto;
+      padding: 1.5rem;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .hero img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      min-height: 44px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .message {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: green;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* ===== DESKTOP ===== */
+    @media (min-width: 768px) {
+      .hero {
+        flex-direction: row;
+        text-align: left;
+      }
+
+      .hero-text {
+        flex: 1;
+      }
+
+      .hero-image {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>My Practice Website</h1>
+    <p>Responsive • Simple • Clean</p>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Hello 👋</h2>
+        <p>
+          This is a one-page responsive website to practice HTML, CSS,
+          and JavaScript. Resize your screen and see what happens!
+        </p>
+
+        <button id="clickMeBtn">Click Me</button>
+        <div class="message" id="message"></div>
+      </div>
+
+      <div class="hero-image">
+        <img src="https://picsum.photos/500/300" alt="Sample image" />
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Practice Site
+  </footer>
+
+  <script>
+    const button = document.getElementById("clickMeBtn");
+    const message = document.getElementById("message");
+
+    button.addEventListener("click", () => {
+      message.textContent = "Nice! JavaScript is working 🚀";
+    });
+  </script>
+
 </body>
 </html>
