@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>kuyaGigi • Personal Website</title>
+  <title>kuyaGigi • King of the Pirates 👑</title>
   <style>
     /* ===== RESET ===== */
     *, *::before, *::after {
@@ -12,9 +12,14 @@
       padding: 0;
     }
 
+    /* ===== ONEPIECE FONT IMPORT ===== */
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka+One&display=swap');
+
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: #FFF4E6;
+      font-family: 'Fredoka One', 'Segoe UI', system-ui, sans-serif;
+      background: #D4F0FF;
+      background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(255,215,0,0.15) 0%, transparent 50%);
       color: #1C1C1C;
       line-height: 1.6;
       min-height: 100vh;
@@ -25,34 +30,65 @@
       display: block;
     }
 
+    /* ===== WAVE DIVIDER ===== */
+    .wave-divider {
+      width: 100%;
+      height: 60px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60"><path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z" fill="%230D2B45"/></svg>') repeat-x;
+      background-size: 1200px 60px;
+      margin-top: -6px;
+    }
+
     /* ===== HEADER ===== */
     header {
-      background: #FF5E5B;
+      background: linear-gradient(180deg, #E23636 0%, #B71C1C 100%);
       border-bottom: 6px solid #1C1C1C;
-      padding: 2.5rem 1.5rem;
+      padding: 2rem 1.5rem 1.5rem;
       text-align: center;
       box-shadow: 0 8px 0 rgba(0,0,0,0.12);
       position: relative;
     }
 
+    .header-straw-hat {
+      font-size: 4rem;
+      margin-bottom: 0.25rem;
+      display: block;
+      filter: drop-shadow(3px 3px 0 rgba(0,0,0,0.3));
+    }
+
     header h1 {
-      font-size: 3.5rem;
-      font-weight: 900;
+      font-family: 'Bangers', cursive;
+      font-size: 4rem;
+      font-weight: 400;
       text-transform: uppercase;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
+      color: #FFD700;
+      text-shadow: 4px 4px 0 #1C1C1C, -2px -2px 0 #B8860B;
+      line-height: 1.1;
+    }
+
+    header h1 .highlight-red {
       color: #fff;
-      text-shadow: 5px 5px 0 #1C1C1C;
+      text-shadow: 4px 4px 0 #1C1C1C;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #fff;
       margin-top: 0.75rem;
       font-weight: 700;
       background: #1C1C1C;
       display: inline-block;
-      padding: 0.3rem 1.2rem;
-      border-radius: 0;
+      padding: 0.4rem 1.4rem;
+      border: 3px solid #FFD700;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== JOLLY ROGER DECO ===== */
+    .jolly-roger {
+      display: inline-block;
+      font-size: 1.6rem;
+      margin: 0 0.3rem;
     }
 
     /* ===== CONTAINER ===== */
@@ -71,13 +107,28 @@
       margin-bottom: 3rem;
       text-align: center;
       transform: rotate(-0.5deg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '☠️';
+      position: absolute;
+      top: -20px;
+      right: -10px;
+      font-size: 5rem;
+      opacity: 0.08;
+      transform: rotate(25deg);
     }
 
     .hero h2 {
+      font-family: 'Bangers', cursive;
       font-size: 3.5rem;
-      font-weight: 900;
+      font-weight: 400;
       margin-bottom: 1rem;
-      color: #1C1C1C;
+      color: #E23636;
+      text-shadow: 3px 3px 0 #1C1C1C;
+      letter-spacing: 2px;
     }
 
     .hero p {
@@ -88,12 +139,21 @@
     }
 
     .hero .highlight {
-      background: #FFE66D;
+      background: #FFD700;
       padding: 0.1rem 0.4rem;
       font-weight: 700;
+      border: 2px solid #1C1C1C;
     }
 
-    /* ===== CARDS GRID ===== */
+    .hero .highlight-red {
+      background: #E23636;
+      color: #fff;
+      padding: 0.1rem 0.4rem;
+      font-weight: 700;
+      border: 2px solid #1C1C1C;
+    }
+
+    /* ===== CARDS GRID (Wanted Poster Style) ===== */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -102,11 +162,29 @@
     }
 
     .card {
-      background: #fff;
+      background: #FAEBD7; /* parchment */
       border: 6px solid #1C1C1C;
       box-shadow: 10px 10px 0 #1C1C1C;
       overflow: hidden;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
+      position: relative;
+    }
+
+    .card::after {
+      content: 'WANTED';
+      position: absolute;
+      top: 16px;
+      left: -32px;
+      background: #E23636;
+      color: #fff;
+      font-family: 'Bangers', cursive;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      padding: 0.2rem 2.5rem;
+      border: 2px solid #1C1C1C;
+      transform: rotate(-35deg);
+      box-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+      z-index: 2;
     }
 
     .card:hover {
@@ -119,6 +197,7 @@
       height: 220px;
       object-fit: cover;
       border-bottom: 6px solid #1C1C1C;
+      filter: sepia(0.3) contrast(1.1);
     }
 
     .card-body {
@@ -126,55 +205,93 @@
     }
 
     .card-body h3 {
-      font-size: 1.6rem;
-      font-weight: 900;
+      font-family: 'Bangers', cursive;
+      font-size: 1.8rem;
+      font-weight: 400;
       margin-bottom: 0.4rem;
+      letter-spacing: 1px;
     }
 
     .card-body p {
       font-size: 1rem;
       color: #333;
+      font-family: 'Segoe UI', system-ui, sans-serif;
     }
 
-    .card:nth-child(1) .card-body h3 { color: #FF5E5B; }
-    .card:nth-child(2) .card-body h3 { color: #4ECDC4; }
-    .card:nth-child(3) .card-body h3 { color: #FFB347; }
+    .card:nth-child(1) .card-body h3 { color: #E23636; }
+    .card:nth-child(2) .card-body h3 { color: #1E8BC3; }
+    .card:nth-child(3) .card-body h3 { color: #D4A017; }
+
+    /* ===== BERRI / BOUNTY RIBBON ===== */
+    .bounty-tag {
+      display: inline-block;
+      background: #1C1C1C;
+      color: #FFD700;
+      font-family: 'Bangers', cursive;
+      font-size: 1rem;
+      padding: 0.15rem 0.8rem;
+      margin-top: 0.5rem;
+      letter-spacing: 1px;
+      border: 2px solid #FFD700;
+    }
 
     /* ===== GAME SECTION ===== */
     .game-section {
-      background: #4ECDC4;
+      background: linear-gradient(135deg, #B71C1C 0%, #E23636 50%, #D4A017 100%);
       border: 6px solid #1C1C1C;
       box-shadow: 12px 12px 0 #1C1C1C;
       padding: 2.5rem;
       text-align: center;
       margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .game-section::before {
+      content: '🏴‍☠️';
+      position: absolute;
+      top: -15px;
+      left: 20px;
+      font-size: 2.5rem;
+      transform: rotate(-15deg);
+    }
+
+    .game-section::after {
+      content: '⛵';
+      position: absolute;
+      bottom: -10px;
+      right: 20px;
+      font-size: 2.5rem;
+      transform: rotate(15deg);
     }
 
     .game-section h2 {
-      font-size: 2.2rem;
-      font-weight: 900;
+      font-family: 'Bangers', cursive;
+      font-size: 2.5rem;
+      font-weight: 400;
       margin-bottom: 1.5rem;
       color: #fff;
       text-shadow: 4px 4px 0 #1C1C1C;
+      letter-spacing: 2px;
     }
 
     #clickBtn {
-      background: #FF5E5B;
+      background: #1E8BC3;
       color: #fff;
       border: 5px solid #1C1C1C;
-      font-size: 1.4rem;
-      font-weight: 800;
+      font-family: 'Bangers', cursive;
+      font-size: 1.8rem;
+      font-weight: 400;
       padding: 1rem 2.5rem;
       cursor: pointer;
       box-shadow: 7px 7px 0 #1C1C1C;
       transition: all 0.05s linear;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       min-height: 60px;
     }
 
     #clickBtn:hover {
-      background: #e04a47;
+      background: #156a96;
     }
 
     #clickBtn:active {
@@ -187,47 +304,74 @@
       font-size: 1.8rem;
       font-weight: 900;
       color: #1C1C1C;
-      background: #fff;
+      background: #FAEBD7;
       display: inline-block;
       padding: 0.6rem 2rem;
       border: 5px solid #1C1C1C;
-      min-width: 220px;
+      min-width: 240px;
+      font-family: 'Bangers', cursive;
+      letter-spacing: 1px;
     }
 
-    /* ===== FOOTER ===== */
+    /* ===== BONUS: GRAND LINE MAP VIBE FOOTER ===== */
     footer {
-      background: #1C1C1C;
+      background: #0D2B45;
       color: #ccc;
       text-align: center;
       padding: 2rem 1.5rem;
       font-weight: 600;
       font-size: 1.05rem;
-      border-top: 6px solid #FF5E5B;
+      border-top: 6px solid #FFD700;
+      position: relative;
+    }
+
+    footer .log-pos {
+      color: #FFD700;
+      font-weight: 900;
+      font-size: 1.2rem;
     }
 
     footer span {
-      color: #FF5E5B;
+      color: #E23636;
+    }
+
+    footer .crew-tag {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #8FAEBF;
+      letter-spacing: 1px;
     }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 700px) {
-      header h1 { font-size: 2.2rem; }
-      header p { font-size: 1rem; }
+      header h1 { font-size: 2.8rem; }
+      header p { font-size: 0.95rem; }
 
       .hero h2 { font-size: 2.5rem; }
       .hero { padding: 1.5rem; transform: none; }
 
       .card-img { height: 180px; }
 
-      .game-section h2 { font-size: 1.6rem; }
-      #clickBtn { font-size: 1.1rem; padding: 0.8rem 1.5rem; }
+      .game-section h2 { font-size: 1.8rem; }
+      #clickBtn { font-size: 1.4rem; padding: 0.8rem 1.5rem; }
       #clickMsg { font-size: 1.3rem; padding: 0.5rem 1.2rem; }
     }
 
     @media (max-width: 400px) {
-      header h1 { font-size: 1.6rem; }
+      header h1 { font-size: 2rem; }
       .container { padding: 1.5rem 1rem; }
       .cards { grid-template-columns: 1fr; }
+    }
+
+    /* ===== ANIMATION: GOMU GOMU PISTOL PULSE ===== */
+    @keyframes gomu-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .gomu-pulse {
+      animation: gomu-pulse 0.4s ease;
     }
   </style>
 </head>
@@ -235,38 +379,51 @@
 
   <!-- ===== HEADER ===== -->
   <header>
-    <h1>kuyaGigi</h1>
-    <p>🍚 Bahug² Lover 😁 • 🥃 Kulafo Drinker 🍹 • 🆒 IT Instructor</p>
+    <span class="header-straw-hat">👒</span>
+    <h1>
+      <span class="highlight-red">kuyaGigi</span>
+      <span style="font-size:2rem;">⛵</span>
+    </h1>
+    <p>
+      <span class="jolly-roger">☠️</span>
+      Straw Hat Pirate • Grand Line Adventurer • Gomu Gomu Instructor
+      <span class="jolly-roger">☠️</span>
+    </p>
   </header>
+
+  <div class="wave-divider"></div>
 
   <!-- ===== MAIN ===== -->
   <main class="container">
 
     <!-- Hero -->
     <section class="hero">
-      <h2>Hello 👋</h2>
+      <h2>Gomu Gomu no... Hello! 👋☠️</h2>
       <p>
-        Welcome to my personal page! A little bit about me, for personal blog
-        purposes only. <span class="highlight">Di lang pam-pamilya, pang sports pa!</span>
+        Welcome to my <span class="highlight-red">WANTED</span> personal page! 
+        Setting sail on the Grand Line of coding, kulafo, and bahug². 
+        <span class="highlight">The One Piece is real! 🏴‍☠️</span>
       </p>
     </section>
 
-    <!-- Cards -->
+    <!-- Cards (Wanted Posters) -->
     <section class="cards">
 
       <div class="card">
         <img
           class="card-img"
-          src="https://picsum.photos/500/300"
-          alt="This is me!"
+          src="images/kuyagigi.jpg"
+          alt="Captain kuyaGigi — Wanted Poster"
           loading="lazy"
         />
         <div class="card-body">
-          <h3>This is me! sheesh 👤</h3>
+          <h3>Captain KuyaGigi 👑</h3>
           <p>
-            IT Instructor by day, kulafo enthusiast by night. Coding,
-            debugging, and living the <strong>kuyaGigi</strong> life.
+            IT Instructor by day, pirate captain by night. Sailing the
+            <strong>Grand Line</strong> of code with my Straw Hat crew.
+            Bounty: rising! 🏴‍☠️
           </p>
+          <div class="bounty-tag">💰 BELIEVE IT!</div>
         </div>
       </div>
 
@@ -274,15 +431,17 @@
         <img
           class="card-img"
           src="images/bahug bahug.jpg"
-          alt="Bahug²"
+          alt="Devil Fruit — Bahug Bahug no Mi"
           loading="lazy"
         />
         <div class="card-body">
-          <h3>🍚 Favorite Food</h3>
+          <h3>🍚 Bahug Bahug no Mi</h3>
           <p>
-            Bahug² is life! Rice + ulam = perfection. Tinola, adobo, monggo —
-            basta may rice, solved na ang problema!
+            The legendary <strong>Devil Fruit</strong> of the East Blue! 
+            Rice + ulam = infinite power. Tinola, adobo, monggo — 
+            this fruit grants <em>unstoppable</em> foodie strength!
           </p>
+          <div class="bounty-tag">🍽️ GRAND LINE CUISINE</div>
         </div>
       </div>
 
@@ -290,32 +449,40 @@
         <img
           class="card-img"
           src="images/kulafu.jpg"
-          alt="Kulafo"
+          alt="Kulafo — Sake of the Pirates"
           loading="lazy"
         />
         <div class="card-body">
-          <h3>🥃 Favorite Drink</h3>
+          <h3>🥃 Pirate's Sake</h3>
           <p>
-            Kulafo — the one and only. Walang kwentang inuman kung walang
-            kulafu. Saktong tamis, saktong saya!
+            <strong>Kulafo</strong> — the sacred sake of the Straw Hats! 
+            Shared between nakama after every victory. Saktong tamis, 
+            saktong saya — <em>kanpai!</em> 🍻
           </p>
+          <div class="bounty-tag">⚓ NAKAMA DRINK</div>
         </div>
       </div>
 
     </section>
 
-    <!-- Interactive Game -->
+    <!-- Interactive Game: Gomu Gomu no... PISTOL! -->
     <section class="game-section">
-      <h2>🎯 Pindutin Mo 'To!</h2>
-      <button id="clickBtn">Click Me!</button>
-      <div id="clickMsg">Clicked 0 times</div>
+      <h2>🔥 Gomu Gomu no... PISTOL! 🔥</h2>
+      <button id="clickBtn">PUNCH! 💥</button>
+      <div id="clickMsg">Gear 0 — Ready!</div>
     </section>
 
   </main>
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    &copy; <span>kuyaGigi</span> — To be continued pa ang design kay busy 😁
+    <span class="log-pos">🌊 LOG POSE</span> — 
+    &copy; <span>kuyaGigi</span> — 
+    Setting sail from Reverse Mountain 🏔️<br/>
+    <span class="crew-tag">🏴‍☠️ Straw Hat Pirate • The One Piece is Real! ☠️👒</span>
+    <span class="crew-tag" style="color:#666; font-size:0.75rem; margin-top:0.3rem;">
+      ~ To be continued sa Grand Line ~
+    </span>
   </footer>
 
   <!-- ===== JAVASCRIPT ===== -->
@@ -325,9 +492,34 @@
       const msg = document.getElementById('clickMsg');
       let count = 0;
 
+      const onePieceLines = [
+        'Gomu Gomu no... PISTOL! 💥',
+        'Gear Second! 🔥',
+        'Haki: Conqueror\'s! 👑',
+        'Mugiwara — Fight! 🏴‍☠️',
+        'Gomu Gomu no... BAZOOKA! 🦾',
+        'Nakama Power! ❤️',
+        'Red Hawk! 🔥🐦',
+        'Gomu Gomu no... STAMP! 🦶',
+        'King of the Pirates?! 👑',
+        'JOY BOY IS BACK! ☀️'
+      ];
+
       btn.addEventListener('click', function() {
         count++;
-        msg.textContent = 'Clicked ' + count + ' times' + (count >= 10 ? ' 🔥' : ' 🎉');
+        const line = onePieceLines[Math.min(count - 1, onePieceLines.length - 1)];
+        msg.textContent = line + ' (x' + count + ')';
+        
+        // GOMU GOMU PULSE animation
+        msg.classList.remove('gomu-pulse');
+        void msg.offsetWidth; // force reflow
+        msg.classList.add('gomu-pulse');
+
+        if (count >= 10) {
+          btn.textContent = 'GEAR 5! ☁️✨';
+          btn.style.background = '#fff';
+          btn.style.color = '#E23636';
+        }
       });
     })();
   </script>
