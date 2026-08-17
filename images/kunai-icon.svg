@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 200" width="80" height="200">
+  <!-- Kunai Silhouette -->
+  <g fill="#1C1C1C">
+    <!-- Blade -->
+    <path d="M40,5 L25,40 Q24,45 28,45 L35,45 L30,75 Q30,80 34,78 L40,60 L46,78 Q50,80 50,75 L45,45 L52,45 Q56,45 55,40 Z"/>
+    <!-- Ring at end -->
+    <circle cx="40" cy="140" r="12" fill="none" stroke="#1C1C1C" stroke-width="4"/>
+    <!-- Handle wrapping -->
+    <rect x="31" y="80" width="18" height="4" rx="1"/>
+    <rect x="31" y="90" width="18" height="4" rx="1"/>
+    <rect x="31" y="100" width="18" height="4" rx="1"/>
+    <rect x="31" y="110" width="18" height="4" rx="1"/>
+    <rect x="31" y="120" width="18" height="4" rx="1"/>
+  </g>
+</svg>

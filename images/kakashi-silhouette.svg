@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" width="200" height="400">
+  <!-- Kakashi Reading Silhouette (leaning against tree pose) -->
+  <g fill="#1C1C1C">
+    <!-- Head -->
+    <ellipse cx="100" cy="50" rx="28" ry="34"/>
+    <!-- Hair (Kakashi's spiky silver hair) -->
+    <polygon points="72,28 62,3 78,22"/>
+    <polygon points="82,18 78,-5 90,15"/>
+    <polygon points="98,15 98,-10 106,15"/>
+    <polygon points="112,18 115,-3 118,20"/>
+    <polygon points="125,28 135,5 128,32"/>
+    <!-- Headband covering L eye -->
+    <rect x="68" y="32" width="64" height="12" rx="2"/>
+    <rect x="95" y="29" width="10" height="17" rx="1"/>
+    <!-- Mask covering lower face -->
+    <path d="M72,48 Q100,60 128,48 L128,58 Q100,72 72,58 Z" fill="#1C1C1C"/>
+    <!-- Body (relaxed, leaning back) -->
+    <ellipse cx="100" cy="125" rx="34" ry="52" transform="rotate(-5,100,125)"/>
+    <!-- Left arm holding book -->
+    <path d="M72,105 Q50,110 40,130 Q38,135 43,132 Q55,125 70,118" stroke="#1C1C1C" fill="#1C1C1C"/>
+    <!-- Right arm reading book -->
+    <path d="M120,100 Q140,95 150,105 Q152,108 148,110 Q138,108 125,108" stroke="#1C1C1C" fill="#1C1C1C"/>
+    <!-- Book in hand -->
+    <rect x="38" y="125" width="25" height="35" rx="2" transform="rotate(15,50,142)"/>
+    <line x1="48" y1="128" x2="48" y2="158" stroke="#F5F0E1" stroke-width="1.5" transform="rotate(15,50,142)"/>
+    <!-- Left leg -->
+    <path d="M80,165 Q70,210 68,260 Q67,268 73,265 Q80,255 85,210 Q87,190 88,165" stroke="#1C1C1C" fill="#1C1C1C"/>
+    <!-- Right leg (bent knee - reading pose) -->
+    <path d="M115,165 Q130,195 140,230 Q142,238 135,236 Q128,230 120,200 Q116,185 113,168" stroke="#1C1C1C" fill="#1C1C1C"/>
+    <!-- Jacket / flak vest shape -->
+    <path d="M75,82 Q100,92 122,82 Q120,95 100,100 Q80,95 75,82" fill="#1C1C1C"/>
+    <!-- Anbu sword hint on back -->
+    <line x1="125" y1="80" x2="135" y2="140" stroke="#1C1C1C" stroke-width="4"/>
+    <ellipse cx="136" cy="76" rx="4" ry="8" transform="rotate(20,136,76)" stroke="#1C1C1C" fill="#1C1C1C" stroke-width="1.5"/>
+  </g>
+</svg>
